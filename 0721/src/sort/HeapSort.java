@@ -25,7 +25,8 @@ public class HeapSort {
             adjustHeap(arr, 0, j);
         }
     }
-    /* 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上, 也就是说只调用一次,并没有得到大顶堆）
+    /** 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上,
+        也就是说只调用一次,并没有得到大顶堆）
      * 就是将arr[parent] 的值放到本次调整过程中适当的位置。
     */
     private static void adjustHeap(int[] arr, int parent, int len) {
