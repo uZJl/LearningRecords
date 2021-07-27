@@ -28,7 +28,7 @@ public class QuicklySort {
                 arr[j] = temp;
             }
         }
-        // 将基准为i和j相等的位置的数字交换
+        // 将基准与i和j相等的位置的数字交换
         arr[begin] = arr[i];
         arr[i] = base;
         quickSort(arr, begin, i - 1);//递归调用左半数组
