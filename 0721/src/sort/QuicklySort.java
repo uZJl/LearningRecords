@@ -8,31 +8,24 @@ public class QuicklySort {
         quickSort(arr,0,arr.length - 1);
     }
 
-    public static void quickSort(int[] arr, int begin, int end) {
-        if (begin > end) {
+    private static void quickSort(int[] arr, int l, int r) {
+        if (l >= r) {
             return;
         }
-        int base = arr[begin];
-        int i = begin;
-        int j = end;
+        int i = l, j = r;
         while (i < j) {
-            while (arr[j] >= base && i < j) {
-                j--;
-            }
-            while (arr[i] <= base && i < j) {
-                i++;
-            }
-            if (i < j) {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
+            while (i < j && arr[j] >= arr[l]) j--;
+            while (i < j && arr[i] <= arr[l]) i++;
+            swap(arr, i, j);
         }
-        // 将基准与i和j相等的位置的数字交换
-        arr[begin] = arr[i];
-        arr[i] = base;
-        quickSort(arr, begin, i - 1);//递归调用左半数组
-        quickSort(arr, i + 1, end);// 递归调用右半数组
+        swap(arr, i, l);
+        quickSort(arr, i, l - 1);
+        quickSort(arr, l + 1, r);
+    }
+    private static void swap (int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public static void main(String[] args) {

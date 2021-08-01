@@ -9,40 +9,42 @@ public class MergeSort {
     public static void main(String[] args) {
 
     }
-    public static void mergeSort(int[] arr) {
+    private static void mergeSort(int[] arr) {
         int[] temp = new int[arr.length];
         mergeSort(arr, 0, arr.length - 1, temp);
     }
-
-    public static void mergeSort(int[] arr, int left, int right, int[] temp) {
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-            mergeSort(arr, left, mid, temp);
-            mergeSort(arr, mid + 1, right, temp);
-            merge(arr, left, right, mid, temp);
+    private static void mergeSort(int[] arr, int l, int r, int[] temp) {
+        if (l < r) {
+            int m = l + (r - l) / 2;
+            mergeSort(arr, l, m, temp);
+            mergeSort(arr, m + 1, r, temp);
+            merge(arr, l, m, r, temp);
         }
-
     }
-    public static void merge(int[] arr, int left, int right, int mid, int[] temp) {
-        int i = left;
-        int j = mid + 1;
-        int t = 0;
-        while (i <= mid && j <= right) {
+
+    private static void merge(int[] arr, int l, int m, int r, int[] temp) {
+        int i = l;
+        int j = m + 1;
+        int index = 0;
+        while (i <= m && j <= r) {
             if (arr[i] < arr[j]) {
-                temp[t++] = arr[i++];
+                temp[index++] = arr[i++];
             } else {
-                temp[t++] = arr[j++];
+                temp[index++] = arr[j++];
             }
         }
-        while (i <= mid) {
-            temp[t++] = arr[i++];
+        while (i <= m) {
+            temp[index++] = arr[i++];
         }
-        while (j <= right) {
-            temp[t++] = arr[j++];
+        while (j <= r) {
+            temp[index++] = arr[j++];
         }
-        t = 0;
-        while (left <= right) {
-            arr[left++] = temp[t++];
+
+        //将temp数组的值重新赋给arr数组
+        index = 0;
+        while (l <= r) {
+            arr[l++] = temp[index++];
         }
     }
+
 }
