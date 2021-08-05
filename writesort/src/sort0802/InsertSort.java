@@ -5,7 +5,11 @@ package sort0802;
  */
 public class InsertSort {
     public static void main(String[] args) {
-
+        int[] arr = new int[]{1,5,89,6,7,1,3};
+        insertSort(arr);
+        for (int num : arr) {
+            System.out.print(num);
+        }
     }
     public static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
