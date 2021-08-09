@@ -1,5 +1,7 @@
 package sort0806;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 /**
  * Created by JiaLe on 2021/8/6 8:49
  */
@@ -20,5 +22,6 @@ public class single {
             }
             return instance;
         }
+        ThreadPoolExecutor e = new ThreadPoolExecutor()
     }
 }
