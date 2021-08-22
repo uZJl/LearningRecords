@@ -1,22 +1,22 @@
-package sort;
+package sort0821;
+
+import java.util.Arrays;
 
 /**
- * Created by JiaLe on 2021/7/27 22:29
+ * Created by JiaLe on 2021/8/22 22:04
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = new int[]{1,5,89,6,7,1,3};
+        int[] arr = {9,8,3,1,5,6,7,4,2,8,0};
         quickSort(arr, 0, arr.length - 1);
-        for (int num : arr) {
-            System.out.print(num);
-        }
+        System.out.println(Arrays.toString(arr));
     }
-
-    private static void quickSort(int[] arr, int l, int r) {
+    private static void quickSort(int[] arr, int l ,int r) {
         if (l >= r) {
             return;
         }
-        int i = l, j = r;
+        int i = l;
+        int j = r;
         while (i < j) {
             while (i < j && arr[j] >= arr[l]) j--;
             while (i < j && arr[i] <= arr[l]) i++;
@@ -25,8 +25,10 @@ public class QuickSort {
         swap(arr, i, l);
         quickSort(arr, l, i - 1);
         quickSort(arr, i + 1, r);
+
     }
-    private static void swap (int[] arr, int i, int j) {
+
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

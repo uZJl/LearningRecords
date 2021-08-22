@@ -1,6 +1,9 @@
 package sort0806;
 
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by JiaLe on 2021/8/6 8:49
@@ -22,6 +25,6 @@ public class single {
             }
             return instance;
         }
-        ThreadPoolExecutor e = new ThreadPoolExecutor()
+//        ThreadPoolExecutor e = new ThreadPoolExecutor(5, 10, 1000, TimeUnit.SECONDS, new BlockingQueue<Runnable>, );
     }
 }
