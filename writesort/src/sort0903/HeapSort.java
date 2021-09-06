@@ -8,6 +8,6 @@ public class HeapSort {
 
     }
     private static void heapSort(int[] arr) {
-        for (int parent = arr.length / 2 - 1; )
+//        for (int parent = arr.length / 2 - 1; )
     }
 }
